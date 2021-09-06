@@ -4,7 +4,7 @@ namespace moviesAPI.Models
 {
     public class Movie
     {
-        public int Id { get; set; }
+        [Key] [Required] public int Id { get; set; }
 
         [Required(ErrorMessage = "O campo título é obrigatório.")]
         public string Title { get; set; }
@@ -17,6 +17,5 @@ namespace moviesAPI.Models
 
         [Range(1, 600, ErrorMessage = "A duração deve ter no mínimo 1 minuto e no máximo 600 minutos.")]
         public int Duration { get; set; }
-
     }
 }
